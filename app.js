@@ -5,6 +5,7 @@ let ctx = canvas.getContext("2d");
 // задаем толщину и цвет кисти
 ctx.lineWidth = 2.5;
 ctx.strokeStyle = "black";
+ctx.fillStyle = "black";
 
 
 // задаем размеры canvas
@@ -35,17 +36,25 @@ function mouseUp(event){
     isPaintDown = false;
 }
 
+function fillingMode(){
+    if (filling){
+        ctx.fillRect(0, 0, 466, 466);
+    }
+}
+
 if (canvas){
     canvas.addEventListener('mousemove', mouseXY);   // отслеживает позицию
     canvas.addEventListener('mousedown', mouseDown); // отслеживает опускание кисти
     canvas.addEventListener('mouseup', mouseUp);     // отслеживает поднятие кисти
     canvas.addEventListener('mouseout', mouseUp);    // отслеживает выход за пределы
+    canvas.addEventListener('click', fillingMode);       // заливка при клике
 }
 
 // меняем цвет
 
 function changeColor(event){
-    ctx.strokeStyle = event.target.style.backgroundColor;
+    ctx.strokeStyle = event.target.style.backgroundColor; // цвет для ручки
+    ctx.fillStyle = event.target.style.backgroundColor;   // цвет для заливки
 }
 
 let colors = document.getElementsByClassName('color');
@@ -82,6 +91,4 @@ if (mode){
 
 // режим заливки
 
-// ctx.fillStyle = "green";
-// ctx.fillRect(0, 0, 466, 466);
 
