@@ -13,9 +13,9 @@
 	<div class="center">
 		<canvas id="canvas"> </canvas>
 		<div id="tools">
-			<input type="range" name="wPen" id="wPen" min="0" max="100" step="1" value="50" />
+			<input type="range" name="wPen" id="wPen" min="0.1" max="5.0" step="0.1" value="2.5" />
 			<div id="chooseTool">
-				<div id="pen">Заливка</div>
+				<div id="mode">Заливка</div>
 				<div id="eraser">Ластик</div>
 			</div>
 			<div id="chooseColor">

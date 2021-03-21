@@ -34,7 +34,7 @@ body{
     justify-content: space-around;
   }
   
-  #pen, #eraser{
+  #mode, #eraser{
     background-color: #fff;
     margin-top: 10px;
     padding: 5px;
@@ -45,7 +45,7 @@ body{
     cursor: pointer;
   }
   
-  #pen:active, #eraser:active{
+  #mode:active, #eraser:active{
     transform: scale(0.9);
   }
   
