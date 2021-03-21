@@ -7,10 +7,13 @@ ctx.lineWidth = 2.5;
 ctx.strokeStyle = "black";
 ctx.fillStyle = "black";
 
-
 // задаем размеры canvas
 canvas.height = 466;
 canvas.width = 466;
+
+// создаем белый фон
+ctx.fillStyle = "white";
+ctx.fillRect(0, 0, 466, 466);
 
 let isPaintDown = false;
 
@@ -89,6 +92,21 @@ if (mode){
     mode.addEventListener('click', changeMode);
 }
 
-// режим заливки
+// сохранение фото
+
+function savePick(){
+    let image = canvas.toDataURL('image/jpeg');              // создает ссылку на картинку
+    let linkToSave = document.createElement('a');            // создает элемент а
+    linkToSave.href = image;
+    linkToSave.download = 'ExportOnlinePaint';
+    console.log(linkToSave);
+    linkToSave.click();
+}
+
+let saveBtn = document.getElementById('save');
+saveBtn.addEventListener('click', savePick);
 
 
+// link.setAttribute('download', 'MintyPaper.png');
+// link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+// link.click();

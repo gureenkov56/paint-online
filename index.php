@@ -16,7 +16,7 @@
 			<input type="range" name="wPen" id="wPen" min="0.1" max="5.0" step="0.1" value="2.5" />
 			<div id="chooseTool">
 				<div id="mode">Заливка</div>
-				<div id="eraser">Ластик</div>
+				<div id="save">Сохранить</div>
 			</div>
 			<div id="chooseColor">
 				<div class="color" style="background-color: red"></div>
